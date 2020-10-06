@@ -2,19 +2,19 @@
 
 Server-Side Web Programming Notes
 
-##TOC
-- [x] Introduction
-- [x] Background
+## TOC
+- [x] 1. Introduction
+- [x] 2. Background
     - - [x] JavaServer Pages
-Intro to JSP
-The Request Object
-Advanced Request Handling
-Servlets and Redirection
-Introduction to Servlets
-Servlets and Redirection
-Web Configuration
-Entity Classes and JSTL
-Entity Classes
+    - - [x] Intro to JSP
+    - - [x] The Request Object
+- [x] 3.Advanced Request Handling
+    - - [x] Servlets and Redirection
+    - - [x] Introduction to Servlets
+    - - [x] Servlets and Redirection
+- [] 4. Web Configuration
+- [x] 5. Entity Classes and JSTL
+    - - [x] Entity Classes
 
 
 
