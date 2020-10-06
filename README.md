@@ -2,10 +2,10 @@
 
 Server-Side Web Programming Notes
 
-TOC
-Introduction
-Background
-JavaServer Pages
+##TOC
+- [x] Introduction
+- [x] Background
+    - - [x] JavaServer Pages
 Intro to JSP
 The Request Object
 Advanced Request Handling
@@ -21,15 +21,15 @@ Entity Classes
 
 ## Lesson 2: Background
 
-Web Containers:
-Software to generate request and responses
-Listening and responding
-Receives request via a url
-parse URL
-Retrieve response page
-Run code within the response page to dynamically generate html version of response
-Send response to client
-WCS runs on a web server listening for web URL via particular port
+- Web Containers:
+  - Software to generate request and responses
+- Listening and responding
+- Receives request via a url
+- parse URL
+- Retrieve response page
+- Run code within the response page to dynamically generate html version of response
+- Send response to client
+- WCS runs on a web server listening for web URL via particular port
 
 IDE
 Tools for editing/compiling code, running/debugging
@@ -238,7 +238,7 @@ Servlet Class Structure
 Lesson 4. Entity Classes and JSTL
 
 ##Entity Classes
-Java Classes or Java Beans
+**Java Classes or Java Beans**
 With properties or attributes or member variables that can be gettable/settable
 These properties should not be named after SQL reserved words if using the SQL database
 Each member should have getter and setter method
