@@ -21,40 +21,39 @@ Server-Side Web Programming Notes
 
 ## Lesson 2: Background
 
-- Web Containers:
+### Web Containers:
   - Software to generate request and responses
 - Listening and responding
-- Receives request via a url
-- parse URL
-- Retrieve response page
-- Run code within the response page to dynamically generate html version of response
-- Send response to client
+  - Receives request via a url
+  - parse URL
+  - Retrieve response page
+  - Run code within the response page to dynamically generate html version of response
+  - Send response to client
 - WCS runs on a web server listening for web URL via particular port
 
-IDE
-Tools for editing/compiling code, running/debugging
-Integrated database
-NB includes Glassfish/Tomcat
-Can run both client and server
-Run the page in IDE
-IDE starts the browser, loading the page
-Request sent to the port in the computer using localhost
-Run web containers
-IDE sends response to browser
+####IDE
+- Tools for editing/compiling code, running/debugging
+- Integrated database
+- NB includes Glassfish/Tomcat
+- Can run both client and server
+- Run the page in IDE
+- IDE starts the browser, loading the page
+- Request sent to the port in the computer using localhost
+- Run web containers
+- IDE sends response to browser
+- client/server development
 
-client/server development
-
-NetBeans/JDK
-JAVA EE contains Tomcat and Glassfish
-JDK 8.2/NetBeans 8.2
-
+#### NetBeans/JDK
+- JAVA EE contains Tomcat and Glassfish
+- JDK 8.2/NetBeans 8.2
 
 
 
 
 
 
-Model View Control Paradigm:
+
+### Model View Control Paradigm:
 
 Model View Control (MVC)
 Architecture use to design most large scale websites
@@ -63,8 +62,7 @@ Oftentimes, control and views interact with another component called Model, whic
 This generates the final response
 Used by most frameworks eg. Grails
 
-Control:
-
+#### Control:
 Implementing control logic to determine what happens next,
 Categorizing the request information
 Databases, legal/illegal
@@ -86,156 +84,157 @@ Loan Calculator
 
 
 Loan Calculator Example
-Requirements
-Enter info
-Validation
-Use info to compute payment
-display
+- Requirements
+- Enter info
+- Validation
+- Use info to compute payment
+- display
 
 What are the views, model components of the Loan Calculator example?
 
 
-HTML FORM TAGS
+#### HTML FORM TAGS
 
 
-The form tag:
+#### The form tag:
 	Defines values for element, url, and method
+```HTML
 <form action =”” method=””>
 …
 </form>
-GET vs. POST methods:
-	GET:
-Default method
-Appends form data at the end of URL
-Faster
-No limit to the form data passed
-Allows bookmarking of pages
-	POST:
-Must specify in FORM
-Form data is not visible
-Isn’t the fastest method
-Data passed is limited to 4K
-Prevents bookmarking
+```
+#### GET vs. POST methods:
+- GET:
+  - Default method
+  - Appends form data at the end of URL
+  - Faster
+  - No limit to the form data passed
+  - Allows bookmarking of pages
+- POST:
+  - Must specify in FORM
+  - Form data is not visible
+  - Isn’t the fastest method
+  - Data passed is limited to 4K
+  - Prevents bookmarking
 
-Input Tags
-<input type=”” name=”” value=””>
+#### Input Tags
+```HTML
+<input type=”” name=”” value=””/>
+```
 
-type:
-text
-checkbox (default not checked)
-checked = “true”
-radio
-value = what is sent to server
-selected = “true”
-< input type=”radio” name=”courseprefix” value=”CSIS” checked=”true” />CSIS
+- type
+  - text
+- checkbox (default not checked)
+  - checked = “true”
+- radio
+  - value = what is sent to server
+  - selected = “true”
+```HTML
+<input type=”radio” name=”courseprefix” value=”CSIS” checked=”true” />CSIS
 <input type=”radio” name=”courseprefix” value=”CSCI”/>CSCI
 <input type=”radio” name=”courseprefix” value=”INFO”/>INFO
+```
 
-
-Select/Option Tag
-	Use to create the dropdown menu
+- Select/Option Tag
+  - Use to create the dropdown menu
+```HTML
 <Select name=”coursehours”>
 	<option value=”1”>1</option>
 	<option value=”2” selected=”true>2</option>	   //default selected
 </select>
+```
+- Submit Button
+  - Value attribute displays the label displayed in the button
+```HTML
+<input type=”submit” value=”SUBMIT” />
+```
 
-Submit Button
-	Value attribute displays the label displayed in the button
-	< input type=”submit” value=”SUBMIT” />
+- Form Submission
+  - Values of all the element in the form are submitted in the format of *[element name = element value]*. This can be checked on link when using the GET method
 
-Form Submission
-	Values of all the element in the form are submitted
-		In the format of [element name = element value]
-	This can be checked on link when using the GET method
+- FORM elements and Requests
+  - Data is appended at the end of URL in GET method
+- Submitted values by Element
+  - txt: value entered by the user; NULL if nothing is entered
+  - radio: value of the element selected by the user
+  - select/option: name of the select option and value of the option is used
+	- Eg. coursehours=4
 
-FORM elements and Requests
-	Data is appended at the end of URL in GET method
-Submitted values by Element
-txt: value entered by the user; NULL if nothing is entered
-radio: value of the element selected by the user
-select/option: name of the select option and value of the option is used
-	Eg. coursehours=4
-checkbox:
-	“on” if checked
-	nothing if not checked
-
-
+- checkbox:
+	- “on” if checked/nothing if not checked
 
 ## Lesson 3. JAVA Server Pages
 
 
-Intro to Java Server Pages:
+### Intro to Java Server Pages:
 
-JSP Syntax:
-	<% … %>
+- JSP Syntax:
+```JAVA
+  <% … %>
 	<%= some Java expression%>
+```
 
-Example:
-	Two plus two is <%= 2+2%>.
+- Example:
+	Two plus two is ```<%= 2+2%>```.
 
-Scriplets:
-	<%   -----  %>
-Executes Java code without generating html
-Extract values of form elements
-store/access values in databases
-
+#### Scriplets:
+	- ``<%   -----  %>```
+  - Executes Java code without generating html
+  - Extract values of form elements
+  - store/access values in databases
+```HTML
 <html>
 <body>
-<% int sum = 2+2;%>
+  <% int sum = 2+2;%>
 <p>
 Two plus two is <%= sum%>.
 </p>
 </body>
 </html>
+```
 
-
-
-
-
-
-Dynamica Example:
+- Dynamica Example:
+```html
 <%
 Date now = new Date();
 String nowString = now.toString();
 %>
 
 <p>The current date and time is <%=nowString%>.</p>
+```
 
-
-Importing Classes:
+#### Importing Classes:
+```
 <%@
 Page import=”java.util.Date”
 %>
+```
 
-Documentation:
-Comments:
-	JSP:
-		// comment
-		/* comment */
-	HTML:
-		<!-- comment -->
+- Documentation:
+  - Comments:
+    - JSP:
+      ```
+		    // comment
+		    /* comment */
+      ```
+    - HTML:
+      ```
+        <!-- comment -->
+      ```
+#### The Request Object:
 
+#### Advanced Request Handling:
 
+### Lesson 3. JAVA Server Pages
 
-The Request Object:
+- Introduction to Servlets
 
-Advanced Request Handling:
-
-
-
-
-Lesson 3. JAVA Server Pages
-
-Introduction to Servlets
-
-Servlet Class Structure
-	Key Methods:
-		void doGet(, )
-
+- Servlet Class Structure
+	- Key Methods:
+    - void doGet(, )
 
 
-
-Lesson 4. Entity Classes and JSTL
+### Lesson 4. Entity Classes and JSTL
 
 ##Entity Classes
 **Java Classes or Java Beans**
@@ -243,4 +242,11 @@ With properties or attributes or member variables that can be gettable/settable
 These properties should not be named after SQL reserved words if using the SQL database
 Each member should have getter and setter method
 
-public double getPrinciple ()
+```Java
+public double getPrinciple () {
+  return principle;
+public double setPrinciple (double apr) {
+  this.apr = apr
+}
+}
+```
