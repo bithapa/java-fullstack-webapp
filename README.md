@@ -12,7 +12,7 @@ Server-Side Web Programming Notes
     - - [x] Servlets and Redirection
     - - [x] Introduction to Servlets
     - - [x] Servlets and Redirection
-- [] 4. Web Configuration
+- [ ] 4. Web Configuration
 - [x] 5. Entity Classes and JSTL
     - - [x] Entity Classes
 
