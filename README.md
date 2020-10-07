@@ -257,8 +257,7 @@ public double setPrinciple (double apr) {
 can be automatically inserted using ```alt+insert```.
 
 
-#### Servlet example
-
+#### Servlet example (Loan.java)
 ```JAVA
 // get parameters values and covert to numbers
 double amount = Double.parseDouble(request.getParameter("principal"));
@@ -277,9 +276,39 @@ getServletContext().
 
 ### Expression Language - EL
 - **A way of manipulating entity objects within server pages**
-- Provides direct access to attribute without having to use get method
+  - separate user interface design from Coding
+    - **Server Pages (.jsp)** - User Interface: `getAttribute(attributename)`
+    - **Servlets/Model Classes (.java)** - Model-based Domain `${attributename}`
+- Provides direct access to attribute in JSP without having to use get method
 - Syntax:
-    `${attributename}`
+    - `${attributename}`
+    - `${objectname.variablename}`
+      - must have a getter method `getVariablename` in the Entity class
+      - and a model object `objectname` constructed by the Servlet added to the request *see example below:*
+      - Servlet:
+          ```java
+          double amount = Double.parseDouble(request.getParameter("principal"));
+          double rate = Double.parseDouble(request.getParameter("apr"));
+          int months = Integer.parseInteger(request.getParameter("months"));
+
+          // construct the new loan object from the paramters and add to Request
+          Loan loan = new Loan(amount, rate, months);
+          request.setAttribute("loan", loan);
+          ```
+      - Server Page:
+          ```HTML
+          <table boarder="1">
+            <tr>
+              <td>Loan Amount</td>
+              <td>${loan.principal}</td> <!-- invokes loan.getPrincipal() -->
+            </tr>
+            <tr>
+              <td>Annual Percentage Rate</td>
+              <td>${loan.apr}</td>
+            </tr>
+          ```
+
+
 
 ### JSTL -  JSP Tag Library
     - Simplifying Coding in JSPs
