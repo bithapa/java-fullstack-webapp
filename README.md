@@ -31,7 +31,7 @@ Server-Side Web Programming Notes
   - Send response to client
 - WCS runs on a web server listening for web URL via particular port
 
-####IDE
+#### IDE
 - Tools for editing/compiling code, running/debugging
 - Integrated database
 - NB includes Glassfish/Tomcat
@@ -97,7 +97,8 @@ What are the views, model components of the Loan Calculator example?
 
 
 #### The form tag:
-	Defines values for element, url, and method
+Defines values for element, url, and method
+
 ```HTML
 <form action =”” method=””>
 …
@@ -178,7 +179,7 @@ What are the views, model components of the Loan Calculator example?
 	Two plus two is ```<%= 2+2%>```.
 
 #### Scriplets:
-	- ``<%   -----  %>```
+	- ```<%   -----  %>```
   - Executes Java code without generating html
   - Extract values of form elements
   - store/access values in databases
@@ -204,7 +205,7 @@ String nowString = now.toString();
 ```
 
 #### Importing Classes:
-```
+```JAVA
 <%@
 Page import=”java.util.Date”
 %>
@@ -234,10 +235,11 @@ Page import=”java.util.Date”
     - void doGet(, )
 
 
-### Lesson 4. Entity Classes and JSTL
+## Lesson 4. Entity Classes and JSTL
 
-##Entity Classes
+### Entity Classes
 **Java Classes or Java Beans**
+- NetBeans - Create Class (include in the package)
 With properties or attributes or member variables that can be gettable/settable
 These properties should not be named after SQL reserved words if using the SQL database
 Each member should have getter and setter method
@@ -245,8 +247,59 @@ Each member should have getter and setter method
 ```Java
 public double getPrinciple () {
   return principle;
+}
+
 public double setPrinciple (double apr) {
   this.apr = apr
 }
-}
 ```
+#### Constructors
+can be automatically inserted using ```alt+insert```.
+
+
+#### Servlet example
+
+```JAVA
+// get parameters values and covert to numbers
+double amount = Double.parseDouble(request.getParameter("principal"));
+double rate = Double.parseDouble(request.getParameter("apr"));
+int months = Integer.parseInteger(request.getParameter("months"));
+
+// construct the new loan object from the paramters and add to Request
+Loan loan = new Loan(amount, rate, months);
+request.setAttribute("loan", loan);
+
+// Forward to next page
+getServletContext().
+    getRequestDispatcher(nextPage).
+        forward(request, response);
+```
+
+### Expression Language - EL
+- **A way of manipulating entity objects within server pages**
+- Provides direct access to attribute without having to use get method
+- Syntax:
+    `${attributename}`
+
+### JSTL -  JSP Tag Library
+    - Simplifying Coding in JSPs
+    - JSTL conditional TAGS
+      - EL Conditions
+      - Simple if statements
+      - multiple options conditional statements
+    - JSTL iteration tags  
+
+- Goal - replace complex java servlets code with tags
+- Mostly used for conditions and iteration
+- Syntax:
+  `<c:tagname attributes ...`
+- Must be imported at the start of JSP:
+    ```java
+    <%@ taglib prefix="c"
+      uri="http://java.sun.com/jsp/jstl/core" %>
+    ```
+#### EL Conditions
+- JSTL conditional statements are based on *relational operations*
+- Format: `${condition}`
+  - Conditions usually involves EL attributes
+  - Relational Operators have both Java and letter syntax *****
