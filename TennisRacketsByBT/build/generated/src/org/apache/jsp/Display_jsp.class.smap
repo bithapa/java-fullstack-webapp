@@ -1,0 +1,22 @@
+SMAP
+Display_jsp.java
+JSP
+*S JSP
+*F
++ 0 Display.jsp
+Display.jsp
++ 1 Header.html
+Header.html
++ 2 Footer.html
+Footer.html
+*L
+5,13:60
+18,4:74
+21,2:78
+1#1,23:80
+22#0,2:103
+23:163,7
+23,2:107
+1#2,28:109
+24#0,8:137
+*E
