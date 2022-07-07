@@ -1,6 +1,6 @@
 # server-side Web development with JAVA servlet and JSP
 
-Notes:
+Following Topics/Concepts have been covered in this project:
 
 ## TOC
 - [x] 1. Introduction
@@ -17,36 +17,36 @@ Notes:
     - - [x] Entity Classes
     - - [x] EL - Expression Language
     - - [x] JSTL - JSP Tag Languge
-- [ ] 6. Session Handling
-    - - [ ] Intro to Session Handling
-    - - [ ] Sessions and Entity Objects
-    - - [ ] Sessions and Security
+- [x] 6. Session Handling
+    - - [x] Intro to Session Handling
+    - - [x] Sessions and Entity Objects
+    - - [x] Sessions and Security
 
-- [ ] 7. User Interface Design
-    - - [ ] Modular and Uniform User Interface Design
+- [x] 7. User Interface Design
+    - - [x] Modular and Uniform User Interface Design
 
-- [ ] 8. Entity Class Design and Shopping Carts
-    - - [ ] Displaying list of Entity objects
-    - - [ ] Preloading Entity Objects
-    - - [ ] Selecting from Lists
-    - - [ ] Dynamic Lists and Shopping Carts
-    - - [ ] Displaying Shopping Carts
+- [x] 8. Entity Class Design and Shopping Carts
+    - - [x] Displaying list of Entity objects
+    - - [x] Preloading Entity Objects
+    - - [x] Selecting from Lists
+    - - [x] Dynamic Lists and Shopping Carts
+    - - [x] Displaying Shopping Carts
 
-- [ ] 9. Inout Validation and Error Pages
-  - - [ ] Validation Concepts
-  - - [ ] Validation and the MVC Architecture
-  - - [ ] Displaying Error Messages
-  - - [ ] Validating Required Fields
-  - - [ ] Validating Numeric Fields
-  - - [ ] Validation Using Regular Expression
-  - - [ ] Echoing Fields Values
+- [x] 9. Inout Validation and Error Pages
+  - - [x] Validation Concepts
+  - - [x] Validation and the MVC Architecture
+  - - [x] Displaying Error Messages
+  - - [x] Validating Required Fields
+  - - [x] Validating Numeric Fields
+  - - [x] Validation Using Regular Expression
+  - - [x] Echoing Fields Values
 
-- [ ] 10. Database Manipulation
-  - - [ ] Intro to server-side database
-  - - [ ] Database Servers
-  - - [ ] Intro to JDBC
-  - - [ ] JDBC Queries
-  - - [ ] Parameterized SQL and Prepared Statements
+- [x] 10. Database Manipulation
+  - - [x] Intro to server-side database
+  - - [x] Database Servers
+  - - [x] Intro to JDBC
+  - - [x] JDBC Queries
+  - - [x] Parameterized SQL and Prepared Statements
 
 
 ## Lesson 2: Background
