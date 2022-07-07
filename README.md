@@ -1,6 +1,6 @@
-# server-side
+# server-side Web development with JAVA servlet and JSP
 
-Server-Side Web Programming Notes
+Notes:
 
 ## TOC
 - [x] 1. Introduction
